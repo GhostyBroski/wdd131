@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+:root {
+ --primary-color: #52489c;
+ --secondary-color: #59c3c3;
+ --accent-color: #f45b69;
+ --text-dark: #333;
+ --text-light: #ebebeb;
+ --primary-font: Arial, Helvetica,sans-serif;
+ --secondary-font: Mooli, san-serif;
+}
+
+h1, h2 {
+    font-family: var(--secondary-font);
+}
+
+h1 {
+    font-size: 5em;
+    color: var(--text-light);
+    text-align: center;
+    margin: 20px;
+}
+
+h2 {
+    font-size: 2em;
+    color: var(--text-dark);
+    text-align: center;
+    margin-top: 20px;
+}
+
+body {
+    font-family: var(--primary-font);
+    font-size: 1.2em;
+    margin: 0 auto;
+    padding: 0 auto;
+    width: 100%;
+}
+
+html, body {
+    height: 100%;
+}
+
+#menuBtn {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 2em;
+    font-family: var(--secondary-font);
+    cursor: pointer;
+    padding-bottom: 10px;
+    display: block;
+    justify-self: center;
+    margin: 0 auto;
+}
+
+nav {
+    justify-self: center;
+    align-items: center;
+    display: block;
+}
+
+nav.show {
+    display: none;
+    text-align: center;
+}
+
+a:link{
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+a:link,
+a:visited {
+    color: var(--accent-color);
+    text-align: center;
+    justify-content: center;
+}
+
+header, footer {
+    background-color: var(--primary-color);
+    width: 100%;
+}
+
+header {
+    padding: 30px;
+}
+
+footer p {
+    color: var(--text-light);
+    justify-self: left;
+}
+
+.gallery {
+    grid-template-columns: 1fr;
+    justify-self: center;
+    align-self: center;
+    display: grid;
+}
+
+
+img {
+	max-width: 100%;
+    width: 250px;
+    height: 250px;
+    margin: 30px 30px;
+    object-fit: cover;
+    box-shadow: 3px 5px 10px 5px;
+    padding: 10px 10px;
+}
+
+
+
+
+
+
+@media screen and (min-width: 700px) {
+    .gallery {
+      grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .gallery {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    a:link,
+    a:visited {
+        margin-right: 4em;
+        margin-left: 4em;
+        padding-bottom: 15px;
+    }
+    #menuBtn {
+        display: none;
+    }
+    nav {
+        display: block;
+    }
+}
