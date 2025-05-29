@@ -23,5 +23,41 @@ const articles = [
 		ages: '12-16',
 		genre: 'Fantasy',
 		stars: '⭐⭐⭐⭐'
+	},
+	{
+		id: 3,
+		title: "Belgariad Book One: Pawn of Prophecy",
+		date: "Feb 12, 2022",
+		description:
+		"A fierce dispute among the Gods and the theft of a powerful Orb leaves the World divided into five kingdoms. Young Garion, with his 'Aunt Pol' and an elderly man calling himself Wolf --a father and daughter granted near-immortality by one of the Gods -- set out on a complex mission.",
+		imgSrc:
+		"https://images-na.ssl-images-amazon.com/images/I/41ZxXA+nInL.jpg",
+		imgAlt: "Book cover for Pawn of Prophecy",
+		ages: "12-16",
+		genre: "Fantasy",
+		stars: "⭐⭐⭐⭐⭐"
 	}
 ]
+
+let container = document.querySelector('#bookcontent');
+
+articles.forEach(function(book) {
+
+	let html = `
+		<div class="meta-info">
+            <p class="date">${book.date}</p>
+            <p class="ages">${book.age}</p>
+            <p class="genre">${book.genre}</p>
+            <p class="stars">${book.stars}</p>
+        </div>
+
+        <div id="book1">
+            <h2 class="book-title">${book.title}</h2>
+            <img class="book-img" src="${book.imgSrc}" alt="${book.imgAlt}">
+            <p>
+                ${book.description}
+            </p>
+        </div>
+	`
+	container.innerHTML += html;
+})

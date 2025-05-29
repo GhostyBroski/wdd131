@@ -13,6 +13,12 @@ main {
     padding: 20px;
 }
 
+#bookcontent {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-column: 1/3;
+}
+
 .skiptocontent a {
     position: absolute;
     left: 0;
@@ -29,7 +35,6 @@ main {
 .skiptocontent a:focus {
     top: 10px;
 }
-
 
 h1, h2 {
     font-family: Lora, Impact, serif;
@@ -80,6 +85,7 @@ h2 {
     grid-column: 1;
     font-size: 0.9rem;
     line-height: 0.7;
+    padding-right: 10px;
 }
 
 .date {
@@ -106,5 +112,5 @@ main > p:last-child {
     background-color: #f5f5f5;
     padding: 20px;
     border: 2px solid #EFC69B;
-    text-align: center;
+    text-align: left;
 }
