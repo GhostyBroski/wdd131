@@ -3,7 +3,7 @@ const character = {
       class: "Swamp Beast Diplomat",
       level: 5,
       health: 100,
-      image: 'https://andejuli.github.io/img/snortleblat.png',
+      image: 'snortleblat.webp',
       attacked: function() {
             if (this.health >= 20) {
                 this.health -= 20;
