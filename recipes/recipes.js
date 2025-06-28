@@ -280,8 +280,16 @@ const recipes = [
 	}
 ]
 
+const container = document.getElementById("recipe-list");
+const searchForm = document.getElementById("searchbar");
+const searchInput = searchForm.querySelector("input[name='search']");
 
+// ⭐ Sort recipes alphabetically by name
+function getSortedRecipes(list) {
+  return [...list].sort((a, b) => a.name.localeCompare(b.name));
+}
 
+// ⭐ Generate star rating display
 function generateStars(rating) {
   const rounded = Math.round(rating * 2) / 2;
   const full = Math.floor(rounded);
@@ -297,25 +305,57 @@ function generateStars(rating) {
   `;
 }
 
-const container = document.getElementById("recipe-list");
-
-recipes.forEach(recipe => {
+// ⭐ Render list of recipes
+function renderRecipes(list) {
+  container.innerHTML = "";
+  list.forEach(recipe => {
     const article = document.createElement("article");
     article.className = "recipe-card";
-
     article.innerHTML = `
       <div class="recipe-image">
-            <img src="${recipe.image}" alt="${recipe.name}">
+        <img src="${recipe.image}" alt="${recipe.name}">
       </div>
       <div class="recipe-content">
-            <div class="tags">${recipe.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
-            <h2><a href="${recipe.url}" target="_blank" rel="noopener noreferrer">${recipe.name}</a></h2>
-            <div class="stars">${generateStars(recipe.rating)}</div>
-            <p class="description">${recipe.description}</p>
+        <div class="tags">${recipe.tags.map(tag => `<button class="tag-button" data-tag="${tag}">${tag}</button>`).join('')}</div>
+        <h2><a href="${recipe.url}" target="_blank" rel="noopener noreferrer">${recipe.name}</a></h2>
+        <div class="stars">${generateStars(recipe.rating)}</div>
+        <p class="description">${recipe.description}</p>
       </div>
     `;
-
     container.appendChild(article);
+	document.querySelectorAll(".tag-button").forEach(button => {
+  		button.addEventListener("click", () => {
+    		const selectedTag = button.dataset.tag.toLowerCase();
+    		const filtered = recipes.filter(recipe =>
+      			recipe.tags.some(tag => tag.toLowerCase() === selectedTag)
+    		);
+    		renderRecipes(getSortedRecipes(filtered));
+  		});
+	});
+  });
+}
+
+// ⭐ On initial load, show one random recipe
+function showRandomRecipe() {
+  const random = Math.floor(Math.random() * recipes.length);
+  renderRecipes([recipes[random]]);
+}
+showRandomRecipe();
+
+// 🔍 Search functionality
+searchForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const query = searchInput.value.trim().toLowerCase();
+
+  if (query === "") {
+    // If input is empty, show all sorted
+    renderRecipes(getSortedRecipes(recipes));
+  } else {
+    const filtered = recipes.filter(recipe =>
+      recipe.name.toLowerCase().includes(query) ||
+      recipe.description.toLowerCase().includes(query) ||
+      recipe.tags.some(tag => tag.toLowerCase().includes(query))
+    );
+    renderRecipes(getSortedRecipes(filtered));
+  }
 });
-
-
