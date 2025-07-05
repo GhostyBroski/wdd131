@@ -1,0 +1,547 @@
+@import url('https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC|Lato');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Comfortaa:wght@300..700&family=Jacquard+12&family=Patrick+Hand&family=Press+Start+2P&family=VT323&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;  /* Ensure the body and HTML span the full height */
+}
+
+body {
+  font-size: 18px;
+  text-align: center;
+}
+
+.background1 {
+    position: fixed;  /* Fix the image to the viewport */
+    top: 0;           /* Start from the top */
+    left: 0;          /* Start from the left */
+    width: 100vw;     /* Full viewport width */
+    height: 100vh;    /* Full viewport height */
+    background-image: url('bricks_background.jpg');  /* Background image */
+    background-size: cover;   /* Make the image cover the entire div */
+    background-position: center;  /* Center the image */
+    background-repeat: no-repeat;  /* Prevent tiling */
+    z-index: -3;  /* Send it behind other elements */
+}
+
+#content {
+    max-width: 1600px;
+    margin: 0 auto;
+    z-index: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;  /* Full width of the header */
+    padding: 0 20px;  /* Padding on sides to avoid sticking to edges */
+    position: absolute;
+    top: 50%;  /* Vertically center the nav */
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+nav a {
+    z-index: 4;
+    text-decoration: none;
+    font-family: VT323, "Patrick Hand", "Amatic SC";
+    font-size: 2.2em;
+    color: #264653;  /* Adjust as needed */
+    padding: 10px 20px;
+    transition: background-color 0.15s ease, border-radius 0.15s ease;
+}
+
+nav a:hover {
+    background-color: #E9C46A;
+    color: #2A9D8F;
+    border-radius: 30px;
+}
+
+#site-plan-link {
+    margin-right: 70px; /* Adjust as needed */
+}
+
+#games-link {
+    margin-left: 40px; /* Adjust as needed */
+}
+
+
+/* ----------------------------------------- Header Section ------------------------------------ */
+
+
+header {
+    position: relative;
+    height: 300px;
+    width: 100%; /* Full screen width */
+    z-index: 0;
+}
+
+#rectangle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;  /* Full width to avoid overflow */
+    height: 220px;
+    transform: translate(-50%, -50%); 
+    background: #264653;
+    z-index: 1;
+}
+
+.rounded-rectangle1 {
+    position: absolute;  /* Relative instead of absolute to center easily */
+    top: 50%;
+    left: 50%;
+    width: 90%;  /* Leave some padding on the sides */
+    height: 180px;
+    background: #2A9D8F;
+    transform: translate(-50%, -50%); 
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+/* Circle Dots */
+#dot1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    background-color: #E9C46A;
+    border-radius: 50%;
+    transform: translate(-50%, -50%); 
+    z-index: 4;  /* On top of other elements */
+}
+
+#dot2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    transform: translate(-50%, -50%); 
+    background-color: #F4A261;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;  /* Overlapping correctly */
+}
+
+#dot3, #dot4 {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background-color: #2A9D8F;
+    border-radius: 50%;
+    z-index: 2;  /* Below the rounded rectangle */
+}
+
+/* Centered logo */
+#dot3 {
+    top: 20%;
+    left: 0%;  /* Adjust position as needed */
+}
+
+#dot4 {
+    top: 20%;
+    right: 0%;  /* Adjust position as needed */
+}
+
+#logo_link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 25%;
+    z-index: 10;
+}
+
+
+/* ---------------------------------------- Body Section ------------------------------------------ */
+
+h1 {
+    font-family: "Press Start 2P";
+    color: #2691BC;
+    font-size: 3em;
+}
+
+h2 {
+    font-family: "Press Start 2P";
+    color: #2691BC;
+    font-size: 1.8em;
+}
+
+h3 {
+    font-family: "Press Start 2P";
+    width: 100%;
+    color: #2691BC;
+    font-size: 1.6em;
+}
+
+p {
+    font-family: VT323, "Patrick Hand", "Amatic SC";
+    color: #2A9D8F;
+    font-size: 1.2em;
+}
+
+.about-us-grid img {
+    border-radius: 10px;
+}
+
+.about-us-grid { /* Remember to make the games grid that accurate amount of columns and rows for the wireframe provided */
+    display: grid;
+    grid-template-columns: 100px 500px 50px 1fr 100px;
+    grid-template-rows: 250px 500px 500px 500px 250px 250px;
+    z-index: 0;
+}
+
+
+
+/* --------------------------------------- Divider Section ---------------------------------------- */
+
+
+
+#divider1 {
+    margin-top: 50px;
+    grid-column: 1/6;
+    grid-row: 1/2;
+    display: flex;  /* Align elements horizontally */
+    align-items: center;  /* Center vertically */
+    justify-content: center;
+    position: relative;
+}
+
+/* Dot styling */
+.dot5, .dot6, .dot7, .dot8, .dot9, .dot10 {
+    border-radius: 50%;  /* Circular dots */
+    margin: 10px 0;  /* Vertical spacing */
+    z-index: 10;  /* Ensure dots are on top */
+    position: relative;  /* Position dots absolutely */
+}
+
+/* Left-side dots */
+.dot5 {
+    left: -645px;  /* Adjust to position to the left of rectangles */
+}
+
+.dot6 {
+    left: -635px;
+}
+
+.dot7 {
+    left: -625px;
+}
+
+/* Right-side dots */
+.dot8 {
+    right: -625px;  /* Adjust to position to the right of rectangles */
+}
+
+.dot9 {
+    right: -635px;
+}
+
+.dot10 {
+    right: -645px;
+}
+
+.dot5, .dot10 { width: 20px; height: 20px; background-color: #F4A261; }
+.dot6, .dot9 { width: 30px; height: 30px; background-color: #E9C46A; }
+.dot7, .dot8 { width: 50px; height: 50px; background-color: #2A9D8F; }
+
+/* Stack rectangles on top of each other */
+.rounded-rectangle2, .rounded-rectangle3, .rounded-rectangle4 {
+    position: absolute;  /* Overlap rectangles */
+    justify-content: center;
+}
+
+.rounded-rectangle2 {
+    background-color: #264653;
+    border-radius: 50px;
+    width: 1200px;  /* Largest rectangle */
+    height: 100px;
+    z-index: 1;
+}
+
+.rounded-rectangle3 {
+    background-color: #2A9D8F;
+    border-radius: 70px;
+    width: 1100px;  /* Slightly smaller for visible overlap */
+    height: 125px;
+    z-index: 2;
+}
+
+.rounded-rectangle4 {
+    background-color: #E9C46A;
+    border-radius: 90px;
+    width: 1000px;  /* Smallest rectangle */
+    height: 150px;
+    z-index: 3;
+}
+
+/* Include the games-title here, and figure out how to overlay it properly */
+
+.about-us-title {
+    position: absolute;  /* Absolute position to overlay it */
+    top: 45%;  /* Vertically center */
+    left: 50%;  /* Horizontally center */
+    transform: translate(-50%, -60%);  /* Centering offset */
+    z-index: 4;  /* Ensure it's above all rectangles */
+    font-family: "Press Start 2P";  /* Maintain the existing font */
+    color: #2691BC;
+    font-size: 3em;
+    text-align: center;  /* Center the text horizontally */
+    padding-bottom: 30px;
+}
+
+
+/* ------------------------------------- END Divider Section -------------------------------------- */
+
+
+
+#mini-grid1 {
+    margin-top: 40px;
+    margin-right: 15px;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    z-index: 1;
+}
+
+#ph1 {
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+#p1-2 {
+    font-size: 1.6em;
+}
+
+#playing-games {
+    width: 94%;
+    height: 96%;
+    margin-top: 70px;
+    margin-left: 30px;
+    justify-content: center;
+    align-items: center;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-column: 4/5;
+    grid-row: 2/3;
+    z-index: 1;
+}
+
+* {
+    box-sizing: border-box;
+}
+  
+.bg-image {
+    background-image: url("playing-games.jpg");
+    filter: blur(1px);
+    -webkit-filter: blur(1px);
+    height: 96%;
+    width: 94%;  /* Full width inside the grid cell */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-column: 4/5;
+    grid-row: 2/3;
+}
+
+.bg-text {
+    margin-top: 70px;
+    margin-left: 20px;
+    background-color: rgba(0, 0, 0, 0.55);
+    color: #2691BC;
+    font-weight: bold;
+    border: 3px solid #2691BC;
+    border-radius: 15px;
+    width: 96%;
+    height: 98%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    grid-column: 4/5;
+    grid-row: 2/3;
+    z-index: 2;  /* Ensures text is on top of the blurred background */
+}
+
+#blur-big {
+    font-size: 3em;
+    margin: 10px 0;
+    text-shadow: 
+        -2px -2px 0 #E9C46A,
+        2px -2px 0 #E9C46A,
+        -2px  2px 0 #E9C46A,
+        2px  2px 0 #E9C46A;  /* Bottom-right shadow */
+    color: #337995;        /* Inner text color */
+}
+
+#blur-p {
+    font-size: 2em;
+    margin: 20px 0;
+    text-shadow: 
+        -2px -2px 0 #E9C46A,
+         2px -2px 0 #E9C46A,
+        -2px  2px 0 #E9C46A,
+         2px  2px 0 #E9C46A;
+    color: #2A9D8F;
+}
+
+#mini-grid2 {
+    margin-top: 100px;
+    margin-right: 15px;
+    grid-column: 2/5;
+    grid-row: 3/4;
+    z-index: 1;
+}
+
+
+#ph2{
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+#p2-1 {
+    font-size: 1.6em;
+}
+
+#p2-2 {
+    font-size: 1.6em;
+}
+
+#p2-3 {
+    font-size: 1.6em;
+}
+
+#game-room {
+    width: 96%;
+    height: 96%;
+    margin-top: 70px;
+    margin-left: 30px;
+    justify-content: center;
+    align-items: center;
+    grid-column: 2/5;
+    grid-row: 4/5;
+    z-index: 1;
+}
+
+#mini-grid3 {
+    margin-top: 100px;
+    margin-right: 15px;
+    grid-column: 2/5;
+    grid-row: 5/6;
+    z-index: 1;
+}
+
+#ph3 {
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+#p3-1 {
+    font-size: 1.6em;
+}
+
+#games-button {
+    width: 100%;
+    margin-top: 110px;
+    margin-bottom: 50px;
+    grid-column: 2/5;
+    grid-row: 6/7;
+    z-index: 1;
+}
+
+#games-button a {
+    padding: 10px 15px;
+}
+
+.game {
+    font-family: "Press Start 2P";
+    text-decoration: none;
+    background-color: #264653;
+    border-radius: 30px;
+    color: #F4A261;
+    font-size: 1em;
+    display: inline-block;
+    padding: 10px 15px;
+    transition: background-color 0.15s ease, border-radius 0.15s ease;
+}
+
+.game:hover {
+    background-color: #E9C46A;
+    color:#2A9D8F;
+    border-radius: 30px;
+}
+
+/* --------------------------------- Footer section ------------------------------------ */
+
+
+
+footer, .social-img {
+    padding-top: 15px;
+    z-index: 0;
+}
+
+.social img {
+    border-radius: 15px;
+}
+
+footer {
+    background-color: #E9C46A;
+    color: #2A9D8F;
+    padding: 25px 50px;
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;                                                                                                                                                                                                                                                                                                                                                                                                                 
+}
+
+footer a {
+    font-family: VT323, "Patrick Hand", "Amatic SC";
+    display: inline-block;
+    padding: 10px 15px;
+    color: #2A9D8F;
+    text-decoration: none;
+    transition: background-color 0.15s ease, border-radius 0.15s ease;
+}
+
+
+footer a:hover {
+    color: #F4A261;
+}
+
+footer p {
+    font-family: VT323, "Patrick Hand", "Amatic SC";
+    font-size: 2.2em;
+}
+
+footer p a:hover {
+    font-family: VT323, "Patrick Hand", "Amatic SC";
+    text-decoration: none;
+    background-color: #264653;
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 30px;
+}
