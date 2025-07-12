@@ -60,11 +60,16 @@ nav a:hover {
 }
 
 #site-plan-link {
-    margin-right: 70px; /* Adjust as needed */
+    margin-right: 100px; /* Adjust as needed */
 }
 
 #games-link {
     margin-left: 40px; /* Adjust as needed */
+    margin-right: 90px;
+}
+
+#about-link {
+    margin-right: 40px;
 }
 
 
